@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
 import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
+import CatalogList from './CatalogList.js';
 
 class Main extends Component {
   render() {
     return (
-      <ScrollableTabView>
-        <ReactPage tabLabel="About" />
-        <FlowPage tabLabel="Calendar" />
-        <JestPage tabLabel="Events" />
+      <ScrollableTabView
+            renderTabBar={() => <DefaultTabBar />}
+            ref={(tabView) => { this.tabView = tabView; }}
+      >
+        <Text tabLabel='About' />
+        <CatalogList tabLabel='Catalog' />
+        <Text tabLabel='Events' />
       </ScrollableTabView>
-    )
+    );
   }
 }
 
