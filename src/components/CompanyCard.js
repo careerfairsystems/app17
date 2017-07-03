@@ -5,17 +5,26 @@ class CompanyCard extends Component {
   render() {
     return (
       <View style={styles.cardStyle}>
-        <Image source={this.props.companyImage} />
-        <Text>{this.props.companyName}</Text>
+        <Image style={styles.imageStyle} source={{uri: this.props.companyImage}} />
+        <Text style={styles.textStyle}>{this.props.companyName}</Text>
       </View>
     );
   }
 }
 
 const styles = {
+  textStyle: {
+    alignSelf: 'center'
+  },
   cardStyle: {
     flexDirection: 'row',
-    height: 30
+    height: 50,
+
+  },
+  imageStyle: {
+    margin: 7,
+    width: 70,
+    resizeMode: 'contain'
   }
 };
 

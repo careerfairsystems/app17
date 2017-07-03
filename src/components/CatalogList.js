@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import { ScrollView, Alert} from 'react-native';
+import { ScrollView } from 'react-native';
 import CompanyCard from './CompanyCard';
 
 class CatalogList extends Component {
@@ -14,11 +14,17 @@ class CatalogList extends Component {
   getCompanys() {
 
         const cards = [];
-        for (var i = 0; i < this.state.companys.length; i++) {
-          cards.push(<CompanyCard
-                        companyName={this.state.companys[i].name}
-                    />)
+        if(this.state.companys.length >0){
+          console.log(this.state.companys[0].profile.logotype.url);
+          for (var i = 0; i < this.state.companys.length; i++) {
+            cards.push(<CompanyCard
+                          companyName={this.state.companys[i].name}
+                          companyImage={this.state.companys[i].profile.logotype.thumbnails.large.url}
+                      />)
+          }
         }
+
+
         return cards;
       }
 
