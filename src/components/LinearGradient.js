@@ -7,15 +7,15 @@ class LinearGradient extends Component {
     const gradients = [];
     if(this.props.left){
       gradients.push(<View style={styles.firtsGradient} />)
-      for (let i = 0; i < 30; i++) {
+      for (let i = 0; i < 10; i++) {
         gradients.push(
         <View style={{ backgroundColor: 'rgba(255,255,255,0.' + (99 - i) + ')', flex: 1 }} />
       );
       }
     }else{
-      for (let i = 0; i < 30; i++) {
+      for (let i = 0; i < 10; i++) {
         gradients.push(
-        <View style={{ backgroundColor: 'rgba(255,255,255,0.' + (69 + parseInt(i, 10)) + ')', flex: 1 }} />
+        <View style={{ backgroundColor: 'rgba(255,255,255,0.' + (89 + parseInt(i, 10)) + ')', flex: 1 }} />
       );
       }
       gradients.push(<View style={styles.firtsGradient} />)
